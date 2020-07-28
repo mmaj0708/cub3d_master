@@ -8,10 +8,10 @@ NO ./eagle.xpm
 
 C 0 ,  255  ,  255
 
-S ../../../../../home/user42/Téléchargements/gne.xpm  
+S ./purplestone.xpm  
 
    F 20 , 250 , 70
-SO ../../../../../home/user42/Téléchargements/poop-illustration-png-clip-art.xpm  
+SO ./north_texture.xpm  
   
 WE ./mossy.xpm 
 
