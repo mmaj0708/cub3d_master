@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:38:37 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/22 18:42:57 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/27 16:47:45 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@ void	ft_sortsprite(int	*spriteorder, int	*spritedistance, t_raycast *rayc)
 
 void	sprite_matrix(t_raycast *rayc, int i)
 {
-	rayc->sprite_c_x = rayc->sprite_x[i] - rayc->posx; // + 0.5 pour centrer ?
-	rayc->sprite_c_y = rayc->sprite_y[i] - rayc->posy;
+	rayc->sprite_c_x = rayc->sprite_x[i] - rayc->posx + 0.5; // + 0.5 pour centrer ?
+	rayc->sprite_c_y = rayc->sprite_y[i] - rayc->posy + 0.5;
 
 	rayc->invdet = 1.0 / (rayc->planex * rayc->diry - rayc->dirx * rayc->planey);
 	rayc->transformx = rayc->invdet * (rayc->diry * rayc->sprite_c_x - rayc->dirx * rayc->sprite_c_y);

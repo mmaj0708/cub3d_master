@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:41:30 by mmaj              #+#    #+#             */
-/*   Updated: 2020/06/25 18:04:57 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/27 16:52:27 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_key_release(int key, t_raycast *rayc)
 int	is_good_move(int digit)
 {
 	if (digit == 'N' - 48 || digit == 'S' - 48 || digit == 'W' - 48
-	|| digit == 'E' - 48 || digit == 2 || digit == 0)
+	|| digit == 'E' - 48 || digit == 0)
 		return (TRUE);
 	else
 		return (0);

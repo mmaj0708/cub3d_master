@@ -1,25 +1,26 @@
 
 
 R  800   600  
-EA  ../textures/pillar.xpm      
 
-NO ../textures/eagle.xpm    
+EA  ./pillar.xpm      
+
+NO ./eagle.xpm    
 
 C 0 ,  255  ,  255
 
-SO ../textures/north_texture.xpm   
+S ../../../../../home/user42/Téléchargements/gne.xpm  
 
    F 20 , 250 , 70
-S ../textures/pillar.xpm  
+SO ../../../../../home/user42/Téléchargements/poop-illustration-png-clip-art.xpm  
   
-WE ../textures/mossy.xpm 
+WE ./mossy.xpm 
 
 
         1111111111111111111111111      
         1000000000110000000000001
         1011000001112222000000001
-        1001000000002222000000001
-11111111101100000111N000000000001
+        100100000000222200W000001
+111111111011000001110000000000001
 100000000011000001110111111111111
 11110111111111011100000000001
 11110111111111011101010011111

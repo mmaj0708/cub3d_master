@@ -69,7 +69,7 @@ int		ft_get_sprite_pos(t_raycast *rayc)
 				rayc->posy = i + 0.5;
 				if (rayc->struct_map[j][i] == 'N' - 48)
 				{
-					rayc->dirx = -1;
+					rayc->dirx = -0.99;
 					rayc->diry = 0;
 					rayc->planex = 0;
 					rayc->planey = 0.66;
@@ -77,7 +77,7 @@ int		ft_get_sprite_pos(t_raycast *rayc)
 				if (rayc->struct_map[j][i] == 'S' - 48)
 				{
 					// printf("check\n");
-					rayc->dirx = 1;
+					rayc->dirx = 0.99;
 					rayc->diry = 0;
 					rayc->planex = 0;
 					rayc->planey = -0.66;
@@ -85,15 +85,15 @@ int		ft_get_sprite_pos(t_raycast *rayc)
 				if (rayc->struct_map[j][i] == 'W' - 48)
 				{
 					rayc->dirx = 0;
-					rayc->diry = -0.8; // -1
-					rayc->planex = -0.68; // -0.66 sinon bug de spawn
+					rayc->diry = -0.99; // -1
+					rayc->planex = -0.66; // -0.66 sinon bug de spawn
 					rayc->planey = 0;
 				}
 				if (rayc->struct_map[j][i] == 'E' - 48)
 				{
 					rayc->dirx = 0;
-					rayc->diry = 0.8; // ds le tuto 1
-					rayc->planex = 0.68; // ds le tuto 0.66
+					rayc->diry = 0.99; // ds le tuto 1
+					rayc->planex = 0.66; // ds le tuto 0.66
 					rayc->planey = 0;
 				}
 			}
