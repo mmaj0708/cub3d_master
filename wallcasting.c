@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:13:39 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/21 22:23:47 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/28 18:45:25 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,9 @@ void	ft_get_perpwalldist(t_raycast *rayc)
 	
 			// hauteur de la ligne à tracer
 	rayc->lineheight = (int)(rayc->resol_y / rayc->perpwalldist);
-	
+	// printf("lineheight %d\n", rayc->lineheight);
+	if (rayc->lineheight > WALL_HEIGHT_PROTECTION)
+		rayc->lineheight = WALL_HEIGHT_PROTECTION;
 			// calcul du premier et dernier pixel de la colone à remplir
 	rayc->drawstart = -rayc->lineheight / 2 + rayc->resol_y / 2;
 	if (rayc->drawstart < 0)

@@ -20,12 +20,7 @@ int		ft_id_parsing(char **map, t_raycast *rayc)
 
 	ret = TRUE;
 	while (ret == TRUE)
-	{
 		ret = ft_getinfo(map, rayc);
-		// printf("check current map char : %c\n", *map[0]);
-	}
-	// printf("check current map char after mvnl: %c\n", *map_str[0]);
-
 	return (ret);
 }
 
@@ -177,57 +172,39 @@ int		ft_begin_line(char **map)
 	return (0);
 }
 
+void	ft_set_free(t_raycast *rayc, char **map)
+{
+		rayc->error = ERR_FILE;
+		free(map);
+		map = NULL;
+		ft_quit(rayc);
+}
+
 int		ft_set(char *cubfile, t_raycast *rayc, int struct_map[400][400])
 {
-	// printf("check set\n");
 	char	**map;
 	char	*free_save;
-	int		ret;
 
 	map = malloc(sizeof(map) * 1);
 	if ((*map = ft_read_map(cubfile)) == NULL)
-	{
-	printf("check empy file\n");
-		rayc->error = ERR_FILE;
-		free(map);
-		ft_quit(rayc);
-	}
-	free_save = *map; // garder l'adresse pour la free à la fin
-	
-	ret = ft_id_parsing(map, rayc);
-	if (ret == FAILURE)
+		ft_set_free(rayc, map);
+	free_save = *map;
+	if (ft_id_parsing(map, rayc) == FAILURE)
 	{
 		free(free_save);
 		free(map);
-		map = NULL;
 		return (FAILURE);
 	}
 	ft_begin_line(map);
-		// printf("check current map char : %c\n", *map[0]);
-	if((ret = ft_map_parsing(map, struct_map, rayc)) == FAILURE) // GERER ESP + SPRITE
+	if (ft_map_parsing(map, struct_map, rayc) == FAILURE)
 	{
-	printf("check\n");
 		free(free_save);
 		free(map);
 		map = NULL;
 		return (FAILURE);
 	}
-	// printf("check ret set\n");
-	
-	// *map = *map - length_file;
 	free(free_save);
 	free(map);
 	map = NULL;
-
 	return (SUCCESS);
 }
-
-	// printf("no : %s\n", rayc->no);
-	// printf("so : %s\n", rayc->so);
-	// printf("we : %s\n", rayc->we);
-	// printf("ea : %s\n", rayc->ea);
-	// printf("sprite : %s\n", rayc->sprite);
-	// printf("floor : %d %d %d\n", rayc->rf, rayc->gf, rayc->bf);
-	// printf("ceiling : %d %d %d\n", rayc->rc, rayc->gc, rayc->bc);
-	// printf("resol : %d %d\n", rayc->resol_x, rayc->resol_y);
-	// printf("ret = %d\n", ret);

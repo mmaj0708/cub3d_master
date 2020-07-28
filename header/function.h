@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:16:07 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/15 15:08:44 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/28 16:19:56 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		ft_init_mlx(t_raycast *rayc);
 int		ft_first_img(t_raycast *rayc);
 void	ft_init_rayc(t_raycast *rayc);
 int		ft_init_param(t_raycast *rayc);
-void		ft_init_map(t_raycast *rayc);
+void	ft_init_map(t_raycast *rayc);
 
 
 // dealkey
@@ -38,8 +38,8 @@ int	ft_key_release(int key, t_raycast *rayc);
 int	dealkey(t_raycast *rayc);
 
 // spritecasting
-void	ft_sortsprite(int	*spriteorder, int	*spritedistance, t_raycast *rayc);
-int		ft_swap(int *spritedistance, t_raycast *rayc, int i);
+void	ft_sortsprite(double	*spriteorder, double	*spritedistance, t_raycast *rayc);
+int		ft_swap(double *spritedistance, t_raycast *rayc, int i);
 void	sprite_cast(t_raycast *rayc);
 
 // wallcasting

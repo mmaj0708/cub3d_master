@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:38:37 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/27 16:47:45 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/28 18:30:21 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 #include "./header/function.h"
 #include "./header/definition.h"
 
-int		ft_swap(int *spritedistance, t_raycast *rayc, int i)
+int		ft_swap(double *spritedistance, t_raycast *rayc, int i)
 {
-	int	save_x;
-	int	save_y;
-	int	save_dist;
+	double	save_x;
+	double	save_y;
+	double	save_dist;
 
 	save_x = rayc->sprite_x[i];
 	save_y = rayc->sprite_y[i];
@@ -32,7 +32,7 @@ int		ft_swap(int *spritedistance, t_raycast *rayc, int i)
 	return (0);
 }
 
-void	ft_sortsprite(int	*spriteorder, int	*spritedistance, t_raycast *rayc)
+void	ft_sortsprite(double	*spriteorder, double	*spritedistance, t_raycast *rayc)
 {
 	int	i;
 
@@ -88,7 +88,7 @@ void	draw_sprite(t_raycast *rayc)
 		if (rayc->transformy > 0 && rayc->stripe >= 0 && rayc->stripe <= rayc->resol_x && rayc->transformy < rayc->zbuffer[rayc->stripe])
 		{
 			rayc->y = rayc->drawstarty + 1;
-			while (rayc->y <= rayc->drawendy)
+			while (rayc->y < rayc->drawendy)
 			{
 				rayc->d = rayc->y * 256 - rayc->resol_y * 128 + rayc->spriteheight * 128;
 				rayc->texy = ((rayc->d * rayc->tex_height[4]) / rayc->spriteheight) / 256;
@@ -105,8 +105,8 @@ void	draw_sprite(t_raycast *rayc)
 void	sprite_cast(t_raycast *rayc)
 {
 	int	i;
-	int spritedistance[rayc->numsprite];
-	int spriteorder[rayc->numsprite];
+	double spritedistance[rayc->numsprite];
+	double spriteorder[rayc->numsprite];
 	
 	i = 0;
 	// distance sprite -> joueur
@@ -116,7 +116,15 @@ void	sprite_cast(t_raycast *rayc)
 		spritedistance[i] = ((rayc->posx - rayc->sprite_x[i]) * (rayc->posx - rayc->sprite_x[i]) + (rayc->posy - rayc->sprite_y[i]) * (rayc->posy - rayc->sprite_y[i]));
 		i++;
 	}
+	i = 0;
+	while (i < rayc->numsprite)
+	{
+	// printf("spritedistance[%d] = %f\n", i, spritedistance[i]);
+		i++;
+	}
+	
 	ft_sortsprite(spriteorder, spritedistance, rayc);
+
 	i = 0;
 	while (i < rayc->numsprite)
 	{

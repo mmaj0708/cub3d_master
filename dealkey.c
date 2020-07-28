@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:41:30 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/27 16:52:27 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/28 14:50:57 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	is_good_move(int digit)
 
 int	dealkey(t_raycast *rayc)
 {
-	if (rayc->keyboard[ARROW_LEFT] == 1)
+	if (rayc->keyboard[ARROW_LEFT_MAC] == 1)
 	{		
 		rayc->olddirx = rayc->dirx;
 		rayc->dirx = rayc->dirx * cos(rayc->rotspeed) - rayc->diry * sin(rayc->rotspeed);
@@ -56,7 +56,7 @@ int	dealkey(t_raycast *rayc)
 		sprite_cast(rayc);
 		mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
 	}
-	if (rayc->keyboard[ARROW_RIGHT] == 1)
+	if (rayc->keyboard[ARROW_RIGHT_MAC] == 1)
 	{
 		rayc->olddirx = rayc->dirx;
 		rayc->dirx = rayc->dirx * cos(-rayc->rotspeed) - rayc->diry * sin(-rayc->rotspeed);
@@ -75,7 +75,7 @@ int	dealkey(t_raycast *rayc)
 		sprite_cast(rayc);
 		mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
 	}
-	if (rayc->keyboard[KEY_Z] == 1)
+	if (rayc->keyboard[KEY_W_MAC] == 1)
 	{
 		if (is_good_move(rayc->struct_map[(int)(rayc->posx + rayc->dirx * rayc->movespeed)][(int)rayc->posy]) == TRUE) // pk false ? Il faut regarder s'il y a bien un espace en ces coord.
 			rayc->posx += rayc->dirx * rayc->movespeed;
@@ -92,7 +92,7 @@ int	dealkey(t_raycast *rayc)
 		sprite_cast(rayc);
 		mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
 	}
-	if (rayc->keyboard[KEY_S] == 1)
+	if (rayc->keyboard[KEY_S_MAC] == 1)
 	{
 		if (is_good_move(rayc->struct_map[(int)(rayc->posx - rayc->dirx * rayc->movespeed)][(int)rayc->posy]) == TRUE) // pk false ? Il faut regarder s'il y a bien un espace en ces coord.
 			rayc->posx -= rayc->dirx * rayc->movespeed;
@@ -109,7 +109,7 @@ int	dealkey(t_raycast *rayc)
 		sprite_cast(rayc);
 		mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
 	}
-	if (rayc->keyboard[KEY_Q] == 1)
+	if (rayc->keyboard[KEY_A_MAC] == 1)
 	{
 		rayc->perpdirx = rayc->diry;
 		rayc->perpdiry = -rayc->dirx;
@@ -128,7 +128,7 @@ int	dealkey(t_raycast *rayc)
 		sprite_cast(rayc);
 		mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
 	}
-	if (rayc->keyboard[KEY_D] == 1)
+	if (rayc->keyboard[KEY_D_MAC] == 1)
 	{
 		rayc->perpdirx = rayc->diry;
 		rayc->perpdiry = -rayc->dirx;
@@ -147,7 +147,7 @@ int	dealkey(t_raycast *rayc)
 		sprite_cast(rayc);
 		mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
 	}
-	if (rayc->keyboard[ECHAP] == 1)
+	if (rayc->keyboard[ECHAP_MAC] == 1)
 		ft_quit(rayc);
 	return (0);
 }

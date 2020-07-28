@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:06:49 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/21 22:15:33 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/28 16:23:04 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include "./header/definition.h"
 
 // nord : 0, sud : 1, west : 2, east : 3, sprite : 4
+
 int		ft_init_mlx(t_raycast *rayc)
 {
 	rayc->mlx_ptr = mlx_init();
