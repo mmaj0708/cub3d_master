@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:04:51 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/14 19:31:15 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/29 13:39:29 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
 typedef struct	s_raycast
 {
 	// parameters
-	int		struct_map[MAPHEIGHT][MAPWIDTH];
+	int		struct_map[MPH][MPW];
 	int		endmap;
 	char	*no;
 	char	*so;

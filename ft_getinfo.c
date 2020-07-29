@@ -14,24 +14,6 @@
 #include "./header/function.h"
 #include "./header/definition.h"
 
-int		ft_strstr(char **str, char *to_find)
-{
-	int i;
-
-	i = 0;
-	while (str[0][i] == to_find[i])
-	{
-		i++;
-		// printf("**str == %c, *to_find == %c\n", **str, *to_find);
-	// printf("check current char strstr : %c\n", *str[0]);
-		if (to_find[i] == '\0')
-			return (TRUE);	
-		if (str[0][i] == '\0')
-			return (FAILURE);
-	}
-	return (FAILURE);
-}
-
 int		get_id(char **map, t_raycast *rayc)
 {
 	if (ft_strstr(map, "R ") == 1)
@@ -82,104 +64,13 @@ int		affect_id(int id, char **map_str, t_raycast *rayc)
 	int				i;
 	int				ret;
 	t_fct_take_id	fct_tk_id[9];
-	
+
 	i = 0;
 	ret = FAILURE;
-
-	// fct_tk_id = malloc(sizeof(fct_tk_id) * 1);
 	fct_tk_id_init(fct_tk_id);
-
-	// printf("check current char affect_id: %c\n", *map_str[0]);
-
 	while (fct_tk_id[i].id != id && fct_tk_id[i].id != -1)
 		i++;
 	if (fct_tk_id[i].id == id)
 		ret = fct_tk_id[i].ptrfct(map_str, rayc);
-	// printf("check affect_id : %d\n", id);
 	return (ret);
-}
-
-int		ft_is_complete(t_raycast *rayc)
-{
-	if (rayc->sprite != NULL && rayc->no != NULL && rayc->so != NULL && rayc->we != NULL 
-	&& rayc->ea != NULL && rayc->rc != -1 && rayc->gc != -1 && rayc->bc != -1
-	&& rayc->rf != -1 && rayc->gf != -1 && rayc->bf != -1 && rayc->resol_x != -1
-	&& rayc->resol_y != -1 ) // ne marche pas si des valeurs valent zéro 
-		return (TRUE); // initialiser à -1 je dirais ou voir si possible éviter initialisation
-	else
-		return (FALSE);
-}
-
-int		ft_move_nl(char **map_str)
-{
-
-	while (*map_str[0] != '\0' && (*map_str[0] == ' ' || *map_str[0] == 13))
-		map_str[0]++;
-	// ATTENTION : il y a un char invisible en plus faudra ptet le virer à 42
-	
-	if (*map_str[0] == '\0' || *map_str[0] == '\n')
-	{
-		map_str[0]++;
-		if (*map_str[0] != '\0')
-			return (SUCCESS);
-	}
-	// printf("check RET\n");
-	// printf("check char : %c\n", *map_str[0]);
-	return (FAILURE);	
-}
-
-
-int		ft_getinfo(char **map_str, t_raycast *rayc)
-{
-	int		ret;
-	int		id;
-
-	ret = 0;
-	while (*map_str[0] == ' ' || *map_str[0] == '\n' || *map_str[0] == 13)
-	{
-		map_str[0]++; // bug parce que '^M'
-	}
-	if (*map_str[0] == '1' && ft_is_complete(rayc) == FALSE)
-	{
-		rayc->error = ERR_NB_ID;
-		return (FAILURE);
-	}
-	if (*map_str[0] != '1' && ft_is_complete(rayc) == TRUE)
-	{
-	// printf("check char : %c\n", *map_str[0]);
-
-		rayc->error = ERR_NO_MAP;
-		return (FAILURE);
-	}
-	if (*map_str[0] == '1' && ft_is_complete(rayc) == TRUE)
-		return (SUCCESS);
-	
-	id = get_id(map_str, rayc); // quel identifiant ?
-	// printf("id = %d\n", id);
-	if (id == FAILURE)
-		return (FAILURE);
-	
-	while (*map_str[0] && *map_str[0] != ' ') // passer l'id
-		map_str[0]++;
-	while (*map_str[0] && *map_str[0] == ' ')
-		map_str[0]++;
-	// printf("check first char  : %c\n", *map_str[0]);
-
-	if ((ret = affect_id(id, map_str, rayc) == FAILURE)) // affecte les infos suivant l'id à une structure
-		return (FAILURE);
-
-	// printf("check path R : %d, %d\n", rayc->resol_x, rayc->resol_y);
-	// printf("check test rgb : %d %d %d\n", rayc->rc, rayc->gc, rayc->bc);
-	// printf("check retour affect : %d\n", ret);
-
-
-	if ((ret = ft_move_nl(map_str)) == FAILURE) // passer à la ligne suivante en acceptant les esp
-	{	
-
-		rayc->error = ERR_SYNT;
-		return (FAILURE);
-	}
-
-
-	return (TRUE);
 }

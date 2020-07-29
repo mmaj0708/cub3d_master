@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:16:07 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/28 16:19:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/29 15:52:13 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		ft_id_f(char **map_str, t_raycast *param);
 int		ft_id_c(char **map_str, t_raycast *param);
 
 // affecter les éléments du fichier donné
-int				ft_set(char *cubfile, t_raycast *param, int struct_map[MAPHEIGHT][MAPWIDTH]);
+int				ft_set(char *cubfile, t_raycast *param, int struct_map[MPH][MPW]);
 
 // mettre le contenu de la map dans une string
 char			*ft_read_map(char *map_file);
@@ -82,9 +82,12 @@ t_fct_take_id	*fct_tk_id_init(t_fct_take_id *fct_tk_id);
 int				ft_is_complete(t_raycast *param);
 
 // parsing de map
-int				ft_map_parsing(char **map_str, int struct_map[MAPHEIGHT][MAPWIDTH], t_raycast *rayc);
-int				ft_get_map(char **map_str, int struct_map[MAPHEIGHT][MAPWIDTH], t_raycast *rayc);
+int				ft_map_parsing(char **map_str, int struct_map[MPH][MPW], t_raycast *rayc);
+int				ft_get_map(char **map_str, int struct_map[MPH][MPW], t_raycast *rayc);
 int				verif_digit(t_raycast *rayc);
+int				ft_get_sprite_pos(t_raycast *rayc);
+int				is_zero(int a);
+int				ft_check_closed_map(t_raycast *rayc, int i, int j);
 
 // gestion du bmp
 int		ft_bmp(t_raycast *rayc, char **av);

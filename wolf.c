@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:03:01 by user42            #+#    #+#             */
-/*   Updated: 2020/07/28 16:24:14 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/29 15:26:36 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void		ft_init_map(t_raycast *rayc)
 
 	i = 0;
 	j = 0;
-	while (j < MAPHEIGHT)
+	while (j < MPH)
 	{
-		while (i < MAPWIDTH)
+		while (i < MPW)
 		{
 			rayc->struct_map[j][i] = -1;
 			i++;
@@ -51,6 +51,8 @@ int			ft_init_param(t_raycast *rayc)
 	rayc->posx = -1;
 	rayc->posy = -1;
 	rayc->error = -1;
+	rayc->numsprite = 0;
+	rayc->endmap = 0;
 	return (0);
 }
 

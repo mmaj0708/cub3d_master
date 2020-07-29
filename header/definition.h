@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:10:33 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/28 18:37:50 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/29 13:41:52 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,8 @@
 #define ECHAP 65307 // VM
 #define ECHAP_MAC 53 // MAC
 // map width and map height
-#define MAPWIDTH 400
-#define MAPHEIGHT 400
+#define MPW 1000
+#define MPH 1000
 #define WALL_HEIGHT_PROTECTION 200000
 // COLOR AND WIDTH (inutile)
 #define WHITE 16777215

@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:49:01 by mmaj              #+#    #+#             */
-/*   Updated: 2020/06/22 13:37:24 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/29 13:50:39 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,4 +153,20 @@ void	ft_putnbr(int nb)
 		ft_putnbr(n / 10);
 	}
 	put_char(n % 10 + 48);
+}
+
+int		ft_strstr(char **str, char *to_find)
+{
+	int i;
+
+	i = 0;
+	while (str[0][i] == to_find[i])
+	{
+		i++;
+		if (to_find[i] == '\0')
+			return (TRUE);	
+		if (str[0][i] == '\0')
+			return (FAILURE);
+	}
+	return (FAILURE);
 }

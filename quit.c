@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 16:23:48 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/28 16:24:26 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/29 12:16:26 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void		print_error2(t_raycast *rayc)
 	if (rayc->error == ERR_NO_MAP)
 		ft_putstr("ERREUR : Map non trouvée et/ou identifiants en trop\n");
 	if (rayc->error == ERR_DIGIT_MAP)
-		ft_putstr("ERREUR : Caractère(s) incorrect(s) dans la map\n");
+		ft_putstr("ERREUR : Map incorrecte\n");
 	if (rayc->error == ERR_MAP_NOT_CLOSE)
 		ft_putstr(ERR_MAP_NOT_CLOSE_MSG);
 	if (rayc->error == ERR_NB_PLAYER)
