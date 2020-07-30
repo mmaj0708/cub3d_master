@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 18:22:34 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/04 12:58:50 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/30 16:26:07 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 #include "./header/function.h"
 #include "./header/definition.h"
 
-void	put_pixel_to_rayc(int *addr, int x, int y, int color, int size)
+void		put_pixel_to_rayc(t_raycast *rayc, int x, int y, int color)
 {
-	addr[x + y * size / 4] = color;
+	int		*addr;
+
+	addr = (int *)rayc->pixel_address;
+	addr[x + y * rayc->size_line / 4] = color;
 	return ;
 }
 
 int			ft_get_color_int(int red, int green, int blue)
 {
 	int rgb;
+
 	rgb = red;
 	rgb = (rgb << 8) + blue;
 	rgb = (rgb << 8) + green;
 	return (rgb);
 }
 
-void	draw_ceiling(t_raycast *rayc, int i, int j)
+void		draw_ceiling(t_raycast *rayc, int i, int j)
 {
 	int *addr;
 
@@ -38,8 +42,8 @@ void	draw_ceiling(t_raycast *rayc, int i, int j)
 	{
 		while (i < rayc->resol_x)
 		{
-			put_pixel_to_rayc(addr, i, j,
-			ft_get_color_int(rayc->rc, rayc->bc, rayc->gc), rayc->size_line);
+			put_pixel_to_rayc(rayc, i, j,
+			ft_get_color_int(rayc->rc, rayc->bc, rayc->gc));
 			i++;
 		}
 		j++;
@@ -47,18 +51,15 @@ void	draw_ceiling(t_raycast *rayc, int i, int j)
 	}
 }
 
-void	draw_floor(t_raycast *rayc, int i, int j)
+void		draw_floor(t_raycast *rayc, int i, int j)
 {
-	int *addr;
-
-	addr = (int *)rayc->pixel_address;
 	j = rayc->resol_y / 2;
 	while (j < rayc->resol_y)
 	{
 		while (i < rayc->resol_x)
 		{
-			put_pixel_to_rayc(addr, i, j,
-			ft_get_color_int(rayc->rf, rayc->bf, rayc->gf), rayc->size_line);
+			put_pixel_to_rayc(rayc, i, j,
+			ft_get_color_int(rayc->rf, rayc->bf, rayc->gf));
 			i++;
 		}
 		j++;
@@ -66,7 +67,7 @@ void	draw_floor(t_raycast *rayc, int i, int j)
 	}
 }
 
-int	put_sky_floor(t_raycast *rayc)
+int			put_sky_floor(t_raycast *rayc)
 {
 	int i;
 	int j;

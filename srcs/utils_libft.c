@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   utils_libft.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/16 18:49:01 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/29 13:50:39 by mmaj             ###   ########.fr       */
+/*   Created: 2020/07/30 17:02:47 by mmaj              #+#    #+#             */
+/*   Updated: 2020/07/30 17:03:48 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include "./header/function.h"
 #include "./header/definition.h"
 
-int				ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
 	long			i;
 	long			sign;
@@ -86,57 +86,6 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (new);
 }
 
-int				is_good_path_char(char c)
-{
-	if (c == '\\' || c == ':' || c == '*' || c == '?' || c == '"'
-	|| c == '<' || c == '>' || c == '|')
-		return (FAILURE);
-	return (TRUE);
-}
-
-char			*ft_strjoin_char(char *str, char c)
-{
-	int		i;
-	char	*new;
-
-	i = ft_strlen(str, 0);
-	if ((!str) && (!c))
-		return (NULL);
-	new = malloc((i + 1 + 1));
-		// return (NULL);
-	if (str != NULL)
-		ft_strcpy(new, str);
-	new[i] = c;
-	new[++i] = '\0';
-	free(str);
-	str = NULL;
-	return (new);
-}
-
-int				is_digit(char c)
-{
-	if ((c >= '0' && c <= '9') || c == 13)
-		return (TRUE);
-	else
-		return (FALSE);
-}
-
-void	put_char(char c)
-{
-	write(1, &c, 1);
-}
-
-void	ft_putstr(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		put_char(str[i]);
-		i++;
-	}
-}
-
 void	ft_putnbr(int nb)
 {
 	unsigned int n;
@@ -153,20 +102,4 @@ void	ft_putnbr(int nb)
 		ft_putnbr(n / 10);
 	}
 	put_char(n % 10 + 48);
-}
-
-int		ft_strstr(char **str, char *to_find)
-{
-	int i;
-
-	i = 0;
-	while (str[0][i] == to_find[i])
-	{
-		i++;
-		if (to_find[i] == '\0')
-			return (TRUE);	
-		if (str[0][i] == '\0')
-			return (FAILURE);
-	}
-	return (FAILURE);
 }

@@ -6,23 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 16:06:10 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/29 16:40:17 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/30 16:35:34 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header/structure.h"
 #include "./header/function.h"
 #include "./header/definition.h"
-
-int		ft_check_nb_text(t_raycast *param, char *texture)
-{
-	if (texture != NULL)
-	{
-		param->error = ERR_NB_TEXT;
-		return (FAILURE);
-	}
-	return (0);
-}
 
 int		ft_id_no(char **map_str, t_raycast *param)
 {

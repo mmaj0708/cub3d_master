@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 16:23:48 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/29 12:16:26 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/30 14:42:57 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ void		print_error2(t_raycast *rayc)
 	if (rayc->error == ERR_NB_FC)
 		ft_putstr("ERREUR : Identifiant F ou C en trop\n");
 	if (rayc->error == ERR_FC)
-		ft_putstr(ERR_FC_MSG);
+	{
+		ft_putstr("ERREUR : les valeurs RGB de F et C doivent être ");
+		ft_putstr("comprises entre 0 et 255 dans le format : F [R],[G],[B]\n");
+	}
 	if (rayc->error == ERR_SYNT)
 		ft_putstr("ERREUR : Syntaxe non reconnue dans le fichier\n");
 	if (rayc->error == ERR_NO_MAP)
@@ -27,7 +30,10 @@ void		print_error2(t_raycast *rayc)
 	if (rayc->error == ERR_DIGIT_MAP)
 		ft_putstr("ERREUR : Map incorrecte\n");
 	if (rayc->error == ERR_MAP_NOT_CLOSE)
-		ft_putstr(ERR_MAP_NOT_CLOSE_MSG);
+	{
+		ft_putstr("ERREUR : Map non fermée par des '1' ");
+		ft_putstr("ou contient des espaces\n");
+	}
 	if (rayc->error == ERR_NB_PLAYER)
 		ft_putstr("ERREUR : Trop de joueurs trouvés\n");
 	if (rayc->error == ERR_PLAYER)
@@ -41,13 +47,19 @@ void		print_error(t_raycast *rayc)
 	if (rayc->error == ERR_NB_ARG)
 		ft_putstr("ERREUR : Nombre d'argument incorrect\n");
 	if (rayc->error == ERR_WRONG_ARG)
-		ft_putstr(ERR_WRONG_ARG_MSG);
+	{
+		ft_putstr("ERREUR : Le premier argument doit terminer par .cub ");
+		ft_putstr("et le second (facultatif) doit être --save\n");
+	}
 	if (rayc->error == ERR_NB_ID)
 		ft_putstr("ERREUR : Identifiant(s) manquant(s)\n");
 	if (rayc->error == ERR_WR_ID)
 		ft_putstr("ERREUR : Identifiant non reconnu\n");
 	if (rayc->error == ERR_RESOL)
-		ft_putstr(ERR_RESOL_MSG);
+	{
+		ft_putstr("ERREUR : Résolution incorrect, le format demandé ");
+		ft_putstr("est : \"R [x] [y]\" avec x && y > 0\n");
+	}
 	if (rayc->error == ERR_TEXT_PATH)
 		ft_putstr("ERREUR : chemin de texture incorrect\n");
 	if (rayc->error == ERR_NB_TEXT)

@@ -6,24 +6,23 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:04:51 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/29 13:39:29 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/30 14:51:17 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTURE_H
-#define STRUCTURE_H
+# define STRUCTURE_H
 
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include "definition.h"
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <stdio.h>
+# include "definition.h"
 
 typedef struct	s_raycast
 {
-	// parameters
 	int		struct_map[MPH][MPW];
 	int		endmap;
 	char	*no;
@@ -39,84 +38,65 @@ typedef struct	s_raycast
 	int		rc;
 	int		gc;
 	int		bc;
-	// erreur
 	int		error;
-	// position
 	double	posx;
 	double	posy;
-	// vecteur direction
 	double	dirx;
 	double	diry;
-	// direction perpendiculaire
 	double	perpdirx;
 	double	perpdiry;
-	// vecteur plan camera
 	double	planex;
 	double	planey;
-	// variables de temps
 	double	time;
 	double	oldtime;
-	// variables de raycasting
 	int		w;
 	int		x;
-	int		y; // pour la texture ensuite
+	int		y;
 	double	raydirx;
 	double	raydiry;
 	double	camerax;
-	// position du carré
 	int		mapx;
 	int		mapy;
-	// dist. position -> première arête
 	double	sidedistx;
 	double	sidedisty;
-	// dist. arête -> arête suivante
 	double	deltadistx;
 	double	deltadisty;
-	// longueur rayon
-	double perpwalldist;
-	// pas
+	double	perpwalldist;
 	int		stepx;
 	int		stepy;
-	// variables mur touché
 	int		hit;
 	int		side;
-	// variables de la colonne à remplir
 	int		lineheight;
 	int		drawstart;
 	int		drawend;
-	// variables temps et vitesse
 	double	frametime;
 	double	movespeed;
 	double	rotspeed;
 	double	olddirx;
 	double	oldplanex;
-	// variables rayc
 	void	*rayc_ptr;
-	void 	*mlx_ptr;
-	void 	*mlx_win;
+	void	*mlx_ptr;
+	void	*mlx_win;
 	char	*pixel_address;
 	int		bits_per_pixel;
 	int		size_line;
-	int 	endian;
+	int		endian;
 	int		width;
 	int		height;
-	// Press and release
 	int		keyboard[65365];
-	// Texture
 	void	*tex_ptr[5];
 	int		tex_width[5];
 	int		tex_height[5];
-	int		*tex_pix_addr[5]; // faire un tableau pour toutes les text.
+	int		*tex_pix_addr[5];
 	int		tex_bpp[5];
 	int		tex_sl[5];
-	int 	tex_endian[5];
+	int		tex_endian[5];
 	int		texnum;
-	double		wallx;
+	double	wallx;
 	int		texx;
 	int		texy;
 	int		d;
 	int		pix_color;
-	// sprite
 	double	zbuffer[2500];
 	double	spritedistance;
 	double	sprite_x[100];
@@ -157,5 +137,4 @@ typedef	struct	s_bmp
 	int			*data_ptr;
 	double		trash;
 }				t_bmp;
-
 #endif

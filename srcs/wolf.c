@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:03:01 by user42            #+#    #+#             */
-/*   Updated: 2020/07/29 15:26:36 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/30 14:53:01 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,6 @@ void		ft_err_arg(int ac, char **av, t_raycast *rayc)
 		rayc->error = ERR_NB_ARG;
 		ft_quit(rayc);
 	}
-	if (ac == 3)
-		ft_bmp(rayc, av);
 	if (ft_check_arg(av) == FALSE)
 	{
 		rayc->error = ERR_WRONG_ARG;
@@ -94,14 +92,16 @@ int			main(int ac, char **av)
 	ft_init_param(&rayc);
 	ft_init_map(&rayc);
 	ft_err_arg(ac, av, &rayc);
+	if (ac == 3)
+		ft_bmp(&rayc, av);
 	if (ft_set(av[1], &rayc, rayc.struct_map) == FAILURE)
 		ft_quit(&rayc);
 	ft_init_rayc(&rayc);
 	ft_init_mlx(&rayc);
 	ft_first_img(&rayc);
-	mlx_hook(rayc.mlx_win, KeyPress, KeyPressMask, &ft_key_hit, &rayc);
-	mlx_hook(rayc.mlx_win, KeyRelease, KeyReleaseMask, &ft_key_release, &rayc);
-	mlx_hook(rayc.mlx_win, DESTROY_NOTIFY, STRUCT_NOTIFY_MASK, &ft_quit, &rayc);
+	mlx_hook(rayc.mlx_win, KEYPRESS, 1L << 0, &ft_key_hit, &rayc);
+	mlx_hook(rayc.mlx_win, KEYRELEASE, 1L << 1, &ft_key_release, &rayc);
+	mlx_hook(rayc.mlx_win, DESTROY_NOTIFY, 1L << 17, &ft_quit, &rayc);
 	mlx_loop_hook(rayc.mlx_ptr, &dealkey, &rayc);
 	mlx_loop(rayc.mlx_ptr);
 }

@@ -6,25 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 16:48:39 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/29 18:57:02 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/30 16:30:31 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "./header/structure.h"
 #include "./header/function.h"
 #include "./header/definition.h"
-
-void	ft_pass_sp(char **map_str)
-{
-	while (*map_str[0] == ' ')
-		map_str[0]++;
-}
-
-void	ft_pass_digit(char **map_str)
-{
-	while (is_digit(*map_str[0]) == TRUE)
-		map_str[0]++;
-}
 
 int		ft_pass_comma(char **map_str, t_raycast *param)
 {
@@ -77,7 +65,7 @@ int		ft_id_f(char **map_str, t_raycast *param)
 
 int		ft_id_c(char **map_str, t_raycast *param)
 {
-	if (param->rc != -1 || param->gc != -1|| param->bc != -1)
+	if (param->rc != -1 || param->gc != -1 || param->bc != -1)
 	{
 		param->error = ERR_NB_FC;
 		return (FAILURE);
