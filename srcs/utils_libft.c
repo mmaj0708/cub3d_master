@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 int		ft_atoi(char *str)
 {
@@ -93,7 +93,7 @@ void	ft_putnbr(int nb)
 	if (nb < 0)
 	{
 		n = -1 * nb;
-		put_char('-');
+		ft_put_char('-');
 	}
 	else
 		n = nb;
@@ -101,5 +101,5 @@ void	ft_putnbr(int nb)
 	{
 		ft_putnbr(n / 10);
 	}
-	put_char(n % 10 + 48);
+	ft_put_char(n % 10 + 48);
 }

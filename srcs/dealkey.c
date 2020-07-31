@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 int		ft_key_hit(int key, t_raycast *rayc)
 {
@@ -28,7 +28,7 @@ int		ft_key_release(int key, t_raycast *rayc)
 
 void	ft_turn_left(t_raycast *r)
 {
-	if (r->keyboard[ARROW_LEFT_MAC] == 1)
+	if (r->keyboard[ARROW_LEFT] == 1)
 	{
 		r->olddirx = r->dirx;
 		r->dirx = r->dirx * cos(r->rotspeed) - r->diry * sin(r->rotspeed);
@@ -50,7 +50,7 @@ void	ft_turn_left(t_raycast *r)
 
 void	ft_turn_right(t_raycast *r)
 {
-	if (r->keyboard[ARROW_RIGHT_MAC] == 1)
+	if (r->keyboard[ARROW_RIGHT] == 1)
 	{
 		r->olddirx = r->dirx;
 		r->dirx = r->dirx * cos(-r->rotspeed) - r->diry * sin(-r->rotspeed);
@@ -79,7 +79,7 @@ int		dealkey(t_raycast *rayc)
 	ft_mv_backward(rayc);
 	ft_mv_left(rayc);
 	ft_mv_right(rayc);
-	if (rayc->keyboard[ECHAP_MAC] == 1)
+	if (rayc->keyboard[ECHAP] == 1)
 		ft_quit(rayc);
 	return (0);
 }

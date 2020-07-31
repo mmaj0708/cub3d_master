@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 int		is_good_path_char(char c)
 {

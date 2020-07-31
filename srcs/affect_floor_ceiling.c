@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 int		ft_pass_comma(char **map_str, t_raycast *param)
 {

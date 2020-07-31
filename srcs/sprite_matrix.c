@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 void	ft_spr_draw_calc(t_raycast *rayc)
 {

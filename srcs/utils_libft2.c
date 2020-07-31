@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 char	*ft_strjoin_char(char *str, char c)
 {
@@ -40,7 +40,7 @@ int		is_digit(char c)
 		return (FALSE);
 }
 
-void	put_char(char c)
+void	ft_put_char(char c)
 {
 	write(1, &c, 1);
 }
@@ -52,7 +52,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i])
 	{
-		put_char(str[i]);
+		ft_put_char(str[i]);
 		i++;
 	}
 }

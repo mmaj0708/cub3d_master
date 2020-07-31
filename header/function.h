@@ -130,5 +130,7 @@ void			ft_pass_sp(char **map_str);
 void			ft_pass_digit(char **map_str);
 int				ft_check_nb_text(t_raycast *param, char *texture);
 int				ft_strcmp(char *s1, char *s2);
+void	        ft_put_char(char c);
+
 
 #endif

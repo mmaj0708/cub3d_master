@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./header/structure.h"
-#include "./header/function.h"
-#include "./header/definition.h"
+#include "../header/structure.h"
+#include "../header/function.h"
+#include "../header/definition.h"
 
 int		is_good_move(int digit)
 {
@@ -25,7 +25,7 @@ int		is_good_move(int digit)
 
 void	ft_mv_forward(t_raycast *r)
 {
-	if (r->keyboard[KEY_W_MAC] == 1)
+	if (r->keyboard[KEY_W] == 1)
 	{
 		if (is_good_move(r->struct_map[(int)(r->posx
 		+ r->dirx * r->movespeed)][(int)r->posy]) == TRUE)
@@ -46,7 +46,7 @@ void	ft_mv_forward(t_raycast *r)
 
 void	ft_mv_backward(t_raycast *r)
 {
-	if (r->keyboard[KEY_S_MAC] == 1)
+	if (r->keyboard[KEY_S] == 1)
 	{
 		if (is_good_move(r->struct_map[(int)(r->posx
 		- r->dirx * r->movespeed)][(int)r->posy]) == TRUE)
@@ -67,7 +67,7 @@ void	ft_mv_backward(t_raycast *r)
 
 void	ft_mv_left(t_raycast *r)
 {
-	if (r->keyboard[KEY_A_MAC] == 1)
+	if (r->keyboard[KEY_A] == 1)
 	{
 		r->perpdirx = r->diry;
 		r->perpdiry = -r->dirx;
@@ -90,7 +90,7 @@ void	ft_mv_left(t_raycast *r)
 
 void	ft_mv_right(t_raycast *r)
 {
-	if (r->keyboard[KEY_D_MAC] == 1)
+	if (r->keyboard[KEY_D] == 1)
 	{
 		r->perpdirx = r->diry;
 		r->perpdiry = -r->dirx;

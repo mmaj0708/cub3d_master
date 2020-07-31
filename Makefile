@@ -18,7 +18,7 @@ SRCS = elements.c ft_getinfo.c ft_take_id.c map_parsing.c parsing.c utils.c mlx_
 OBJECTS = elements.o ft_getinfo.o ft_take_id.o map_parsing.o parsing.o utils.o mlx_init.o \
 		wallcasting.o spritecasting.o dealkey.o
 
-INCLUDES = ./header/
+INCLUDES = ../header/
 
 all : $(NAME)
 
