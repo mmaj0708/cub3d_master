@@ -38,9 +38,9 @@ int		ft_id_r(char **map_str, t_raycast *param)
 	}
 	while ((*map_str[0] >= '0' && *map_str[0] <= '9') || *map_str[0] == 13)
 		map_str[0]++;
-	if (param->resol_x > 1727)
-		param->resol_x = 1727;
-	if (param->resol_y > 992)
-		param->resol_y = 992;
+	if (param->resol_x > 1967)
+		param->resol_x = 1967;
+	if (param->resol_y > 1114)
+		param->resol_y = 1114;
 	return (SUCCESS);
 }

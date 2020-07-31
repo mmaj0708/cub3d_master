@@ -53,9 +53,9 @@ $(NAME) :
 	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(MLX)
 
 clean : 
-	@/bin/rm -f $(OBJECTS)
+	rm -f $(OBJECTS)
 
 fclean : clean
-	@/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re : fclean all
