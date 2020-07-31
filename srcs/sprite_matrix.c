@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 12:45:20 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 13:13:36 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 void	ft_spr_draw_calc(t_raycast *rayc)
 {

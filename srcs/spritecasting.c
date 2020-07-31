@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:38:37 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 14:10:02 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 int		ft_swap(double *spritedistance, t_raycast *rayc, int i)
 {

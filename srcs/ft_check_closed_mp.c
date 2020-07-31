@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 15:50:09 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/29 15:50:30 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 int		is_one_vertn(t_raycast *rayc, int i, int j)
 {

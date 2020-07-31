@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:16:07 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 16:52:28 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 17:48:43 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ void			ft_mv_forward(t_raycast *r);
 void			ft_mv_backward(t_raycast *r);
 void			ft_mv_left(t_raycast *r);
 void			ft_mv_right(t_raycast *r);
-
-
 /*
 ** spritecasting
 */
@@ -130,7 +128,5 @@ void			ft_pass_sp(char **map_str);
 void			ft_pass_digit(char **map_str);
 int				ft_check_nb_text(t_raycast *param, char *texture);
 int				ft_strcmp(char *s1, char *s2);
-void	        ft_put_char(char c);
-
-
+void			ft_put_char(char c);
 #endif

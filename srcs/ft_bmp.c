@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/10 17:32:39 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 16:43:09 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 18:44:15 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 int		ft_init_mlx_bmp(t_raycast *rayc)
 {
@@ -101,8 +99,6 @@ int		ft_bmp(t_raycast *rayc, char **av)
 		rayc->error = ERR_WRONG_ARG;
 		ft_quit(rayc);
 	}
-	ft_init_param(rayc);
-	ft_init_map(rayc);
 	if (ft_set(av[1], rayc, rayc->struct_map) == FAILURE)
 		ft_quit(rayc);
 	ft_init_rayc(rayc);
@@ -112,6 +108,6 @@ int		ft_bmp(t_raycast *rayc, char **av)
 	fd = open("Wolf3d.bmp", O_RDWR | O_CREAT, S_IRWXU);
 	ft_write_bmp(rayc, fd);
 	close(fd);
-	exit(0);
+	ft_quit(rayc);
 	return (0);
 }

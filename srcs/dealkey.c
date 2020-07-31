@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:41:30 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 16:50:18 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 17:51:29 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 int		ft_key_hit(int key, t_raycast *rayc)
 {

@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/25 18:22:34 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 16:26:07 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 17:51:29 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 void		put_pixel_to_rayc(t_raycast *rayc, int x, int y, int color)
 {

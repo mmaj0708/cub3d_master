@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:03:01 by user42            #+#    #+#             */
-/*   Updated: 2020/07/30 14:53:01 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 18:37:08 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 void		ft_init_map(t_raycast *rayc)
 {

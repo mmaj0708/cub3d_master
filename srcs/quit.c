@@ -6,15 +6,13 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/28 16:23:48 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/30 14:42:57 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/07/31 18:49:26 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
-#include "../header/mlx.h"
-#include "../header/mlx_int.h"
 
 void		print_error2(t_raycast *rayc)
 {
@@ -71,17 +69,39 @@ void		print_error(t_raycast *rayc)
 	print_error2(rayc);
 }
 
-int			ft_quit(t_raycast *rayc)
+void		ft_free_destroy(t_raycast *rayc)
 {
-	free(rayc->no);
-	free(rayc->so);
-	free(rayc->we);
-	free(rayc->ea);
-	free(rayc->sprite);
+	if (rayc->so)
+		free(rayc->so);
+	if (rayc->we)
+		free(rayc->we);
+	if (rayc->ea)
+		free(rayc->ea);
+	if (rayc->sprite)
+		free(rayc->sprite);
+	if (rayc->tex_ptr[0])
+		mlx_destroy_image(rayc->mlx_ptr, rayc->tex_ptr[0]);
+	if (rayc->tex_ptr[1])
+		mlx_destroy_image(rayc->mlx_ptr, rayc->tex_ptr[1]);
+	if (rayc->tex_ptr[2])
+		mlx_destroy_image(rayc->mlx_ptr, rayc->tex_ptr[2]);
+	if (rayc->tex_ptr[3])
+		mlx_destroy_image(rayc->mlx_ptr, rayc->tex_ptr[3]);
+	if (rayc->tex_ptr[4])
+		mlx_destroy_image(rayc->mlx_ptr, rayc->tex_ptr[4]);
 	if (rayc->rayc_ptr)
 		mlx_destroy_image(rayc->mlx_ptr, rayc->rayc_ptr);
 	if (rayc->mlx_win)
 		mlx_destroy_window(rayc->mlx_ptr, rayc->mlx_win);
+	if (rayc->mlx_ptr)
+		free(rayc->mlx_ptr);
+}
+
+int			ft_quit(t_raycast *rayc)
+{
+	if (rayc->no)
+		free(rayc->no);
+	ft_free_destroy(rayc);
 	print_error(rayc);
 	exit(0);
 }
