@@ -50,7 +50,7 @@ void			ft_mv_right(t_raycast *r);
 /*
 ** spritecasting
 */
-void			ft_sortsprite(double *sprtorder, double *sprtdst, t_raycast *r);
+void			ft_sortsprite(double *sprtdst, t_raycast *r);
 int				ft_swap(double *spritedistance, t_raycast *rayc, int i);
 void			sprite_matrix(t_raycast *rayc, int i);
 void			sprite_cast(t_raycast *rayc);

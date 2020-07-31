@@ -13,6 +13,8 @@
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
+#include "../header/mlx.h"
+#include "../header/mlx_int.h"
 
 void	ft_load_texture(t_raycast *rayc)
 {

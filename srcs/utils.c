@@ -13,6 +13,8 @@
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
+#include "../header/mlx.h"
+#include "../header/mlx_int.h"
 
 int		is_good_path_char(char c)
 {
@@ -47,7 +49,6 @@ int		ft_check_nb_text(t_raycast *param, char *texture)
 int		ft_strcmp(char *s1, char *s2)
 {
 	int i;
-	int diff;
 
 	i = 0;
 	while (s1[i] == s2[i])

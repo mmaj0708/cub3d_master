@@ -13,6 +13,8 @@
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
+#include "../header/mlx.h"
+#include "../header/mlx_int.h"
 
 char	*ft_strjoin_char(char *str, char c)
 {

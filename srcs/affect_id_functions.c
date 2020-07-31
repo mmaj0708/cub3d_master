@@ -13,6 +13,8 @@
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
+#include "../header/mlx.h"
+#include "../header/mlx_int.h"
 
 int				get_id(char **map, t_raycast *rayc)
 {

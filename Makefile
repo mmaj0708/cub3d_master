@@ -10,23 +10,47 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libwolf.a
+NAME = Cub3D
 
-SRCS = elements.c ft_getinfo.c ft_take_id.c map_parsing.c parsing.c utils.c mlx_init.c \
-		wallcasting.c spritecasting.c dealkey.c
+SRCS = srcs/affect_floor_ceiling.c \
+		srcs/affect_id_functions.c \
+		srcs/affect_id_text.c \
+		srcs/dealkey.c \
+		srcs/draw_functions.c \
+		srcs/ft_bmp.c \
+		srcs/ft_check_closed_mp.c \
+		srcs/ft_move_player.c \
+		srcs/ft_read_map.c \
+		srcs/ft_take_id_r.c \
+		srcs/get_sprite_pos.c \
+		srcs/get_verify_map.c \
+		srcs/id_parsing.c \
+		srcs/mlx_init.c \
+		srcs/quit.c \
+		srcs/set_params.c \
+		srcs/sprite_matrix.c \
+		srcs/spritecasting.c \
+		srcs/utils_libft.c \
+		srcs/utils_libft2.c \
+		srcs/utils_mlx.c \
+		srcs/utils.c \
+		srcs/wallcasting_calculs.c \
+		srcs/wallcasting.c \
+		srcs/wolf.c \
 
-OBJECTS = elements.o ft_getinfo.o ft_take_id.o map_parsing.o parsing.o utils.o mlx_init.o \
-		wallcasting.o spritecasting.o dealkey.o
+OBJECTS = $(SRCS:.c=.o)
 
-INCLUDES = ../header/
+CC = clang
+
+CFLAGS = -Wall -Werror -Wextra -I header -g -L ./
+
+MLX = -lX11 -lXext -lm -lmlx
 
 all : $(NAME)
 
 $(NAME) :
 
-	@clang -g3 -fsanitize=address -Wall -Wextra -Werror -I$(INCLUDES) -g -L /usr/local/lib -c $(SRCS) -lX11 -lXext -lm -lmlx
-	@ar rc $(NAME) $(OBJECTS)
-	@ranlib $(NAME)
+	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(MLX)
 
 clean : 
 	@/bin/rm -f $(OBJECTS)

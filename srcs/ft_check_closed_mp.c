@@ -13,6 +13,8 @@
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
+#include "../header/mlx.h"
+#include "../header/mlx_int.h"
 
 int		is_one_vertn(t_raycast *rayc, int i, int j)
 {

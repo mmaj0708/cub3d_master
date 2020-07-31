@@ -13,6 +13,8 @@
 #include "../header/structure.h"
 #include "../header/function.h"
 #include "../header/definition.h"
+#include "../header/mlx.h"
+#include "../header/mlx_int.h"
 
 int		ft_swap(double *spritedistance, t_raycast *rayc, int i)
 {
@@ -32,7 +34,7 @@ int		ft_swap(double *spritedistance, t_raycast *rayc, int i)
 	return (0);
 }
 
-void	ft_sortsprite(double *spriteorder, double *sprdst, t_raycast *rayc)
+void	ft_sortsprite(double *sprdst, t_raycast *rayc)
 {
 	int	i;
 
@@ -86,17 +88,15 @@ void	sprite_cast(t_raycast *r)
 {
 	int		i;
 	double	sprdst[r->numsprite];
-	double	spriteorder[r->numsprite];
 
 	i = 0;
 	while (i < r->numsprite)
 	{
-		spriteorder[i] = i;
 		sprdst[i] = ((r->posx - r->sprite_x[i]) * (r->posx - r->sprite_x[i])
 		+ (r->posy - r->sprite_y[i]) * (r->posy - r->sprite_y[i]));
 		i++;
 	}
-	ft_sortsprite(spriteorder, sprdst, r);
+	ft_sortsprite(sprdst, r);
 	i = 0;
 	while (i < r->numsprite)
 	{
