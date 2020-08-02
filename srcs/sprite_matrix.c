@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 12:45:20 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/02 16:27:01 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ft_spr_draw_calc(t_raycast *rayc)
 	rayc->drawendy = rayc->spriteheight / 2 + rayc->resol_y / 2;
 	if (rayc->drawendy >= rayc->resol_y)
 		rayc->drawendy = rayc->resol_y - 1;
-	rayc->spritewidth = abs((int)(rayc->resol_y / rayc->transformy));
+	rayc->spritewidth = (abs((int)((rayc->resol_x) / rayc->transformy))) / 1.5;
 	rayc->drawstartx = -rayc->spritewidth / 2 + rayc->spritescreenx;
 	if (rayc->drawstartx < 0)
 		rayc->drawstartx = 0;
