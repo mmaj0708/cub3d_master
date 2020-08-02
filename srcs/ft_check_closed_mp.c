@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/29 15:50:09 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/02 12:53:05 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ int		is_one_horie(t_raycast *rayc, int i, int j)
 int		ft_check_closed_map(t_raycast *rayc, int i, int j)
 {
 	if (is_one_vertn(rayc, i, j) == FALSE)
-		return (FAILURE);
+		return (FALSE);
 	if (is_one_verts(rayc, i, j) == FALSE)
-		return (FAILURE);
+		return (FALSE);
 	if (is_one_horiw(rayc, i, j) == FALSE)
-		return (FAILURE);
+		return (FALSE);
 	if (is_one_horie(rayc, i, j) == FALSE)
-		return (FAILURE);
+		return (FALSE);
 	return (TRUE);
 }

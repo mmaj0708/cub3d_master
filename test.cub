@@ -3,19 +3,19 @@
 C 254,3,98
 R 1500 700
 
-NO ./wood.xpm 
+NO ./textures/wood.xpm 
 
 
 
-SO ./north_texture.xpm
+SO ./textures/north_texture.xpm
 
 
 
-EA ./greystone.xpm  
-WE ./mossy.xpm 
+EA ./textures/greystone.xpm  
+WE ./textures/mossy.xpm 
 
 
-S ./pillar.xpm  
+S ./textures/pillar.xpm  
 
 
 

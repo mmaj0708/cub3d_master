@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 16:45:22 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/02 12:53:19 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,29 +72,31 @@ int		is_zero(int a)
 		return (FALSE);
 }
 
-int		verif_digit(t_raycast *rayc)
+int		verif_digit(t_raycast *r)
 {
 	int		i;
 	int		j;
 
 	i = 0;
-	j = -1;
-	while (++j < rayc->endmap)
+	j = 0;
+	while (j < r->endmap)
 	{
-		while (rayc->struct_map[j][i] == ' ' - 48)
+		while (r->struct_map[j][i] == ' ' - 48)
 			i++;
-		while (is_good_digit(rayc->struct_map[j][i]) == TRUE)
+		while (is_good_digit(r->struct_map[j][i]) == TRUE)
 		{
-			if (is_zero(rayc->struct_map[j][i]) == TRUE &&
-			ft_check_closed_map(rayc, i, j) == FAILURE)
+			if (is_zero(r->struct_map[j][i]) && !ft_check_closed_map(r, i, j))
 				return (FAILURE);
 			i++;
 		}
-		if (rayc->struct_map[j][i] == ' ' - 48
-		&& rayc->struct_map[j][i + 1] != -1)
+		if (r->struct_map[j][i] == ' ' - 48
+		&& r->struct_map[j][i + 1] != -1)
 			i++;
 		else
+		{
+			j++;
 			i = 0;
+		}
 	}
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 #    By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/06/21 17:49:30 by mmaj              #+#    #+#              #
-#    Updated: 2020/07/31 18:35:25 by mmaj             ###   ########.fr        #
+#    Updated: 2020/08/02 13:09:26 by mmaj             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,15 +42,15 @@ OBJECTS = $(SRCS:.c=.o)
 
 CC = clang
 
-CFLAGS = -Wall -Werror -Wextra -g3 -I header -g -L ./
+CFLAGS = -Wall -Werror -Wextra -g3 -I header
 
-MLX = -lX11 -lXext -lm -lmlx
+MLX = -g -L ./ -lX11 -lXext -lm -lmlx
 
 all : $(NAME)
 
-$(NAME) :
+$(NAME) : $(OBJECTS)
 
-	$(CC) $(CFLAGS) -o $(NAME) $(SRCS) $(MLX)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJECTS) $(MLX)
 
 clean : 
 	rm -f $(OBJECTS)
