@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/30 16:38:03 by mmaj              #+#    #+#             */
-/*   Updated: 2020/07/31 17:53:56 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/02 22:06:09 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,5 @@ int		ft_id_r(char **map_str, t_raycast *param)
 	}
 	while ((*map_str[0] >= '0' && *map_str[0] <= '9') || *map_str[0] == 13)
 		map_str[0]++;
-	if (param->resol_x > 1967)
-		param->resol_x = 1967;
-	if (param->resol_y > 1114)
-		param->resol_y = 1114;
 	return (SUCCESS);
 }

@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:03:01 by user42            #+#    #+#             */
-/*   Updated: 2020/08/02 12:56:28 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/02 22:45:18 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ int			main(int ac, char **av)
 		ft_bmp(&rayc, av);
 	if (ft_set(av[1], &rayc, rayc.struct_map) == FAILURE)
 		ft_quit(&rayc);
-	ft_init_rayc(&rayc);
 	ft_init_mlx(&rayc);
+	ft_init_rayc(&rayc);
 	ft_first_img(&rayc);
 	mlx_hook(rayc.mlx_win, KEYPRESS, 1L << 0, &ft_key_hit, &rayc);
 	mlx_hook(rayc.mlx_win, KEYRELEASE, 1L << 1, &ft_key_release, &rayc);

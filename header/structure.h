@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/16 18:04:51 by mmaj              #+#    #+#             */
-/*   Updated: 2020/08/02 13:48:54 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/02 21:52:19 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ typedef struct	s_raycast
 	int		rc;
 	int		gc;
 	int		bc;
+	int		screenw;
+	int		screenh;
 	int		error;
 	double	posx;
 	double	posy;
