@@ -102,6 +102,7 @@ int			main(int ac, char **av)
 	mlx_hook(rayc.mlx_win, KEYPRESS, 1L << 0, &ft_key_hit, &rayc);
 	mlx_hook(rayc.mlx_win, KEYRELEASE, 1L << 1, &ft_key_release, &rayc);
 	mlx_hook(rayc.mlx_win, DESTROY_NOTIFY, 1L << 17, &ft_quit, &rayc);
+	mlx_hook(rayc.mlx_win, 12, 1L << 15, &ft_put_img, &rayc);
 	mlx_loop_hook(rayc.mlx_ptr, &dealkey, &rayc);
 	mlx_loop(rayc.mlx_ptr);
 }

@@ -24,6 +24,11 @@ int		ft_init_mlx_bmp(t_raycast *rayc)
 		rayc->error = ERR_TEXT;
 		ft_quit(rayc);
 	}
+	mlx_get_screen_size(rayc->mlx_ptr, &rayc->screenw, &rayc->screenh);
+	if (rayc->resol_x > rayc->screenw)
+		rayc->resol_x = rayc->screenw;
+	if (rayc->resol_y > rayc->screenh)
+		rayc->resol_y = rayc->screenh;
 	ft_data_texture(rayc);
 	return (0);
 }
@@ -101,9 +106,9 @@ int		ft_bmp(t_raycast *rayc, char **av)
 	}
 	if (ft_set(av[1], rayc, rayc->struct_map) == FAILURE)
 		ft_quit(rayc);
-	ft_init_rayc(rayc);
 	if (ft_init_mlx_bmp(rayc) == -1)
 		ft_quit(rayc);
+	ft_init_rayc(rayc);
 	ft_first_img_bmp(rayc);
 	fd = open("Wolf3d.bmp", O_RDWR | O_CREAT, S_IRWXU);
 	ft_write_bmp(rayc, fd);

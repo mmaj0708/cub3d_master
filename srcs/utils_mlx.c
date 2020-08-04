@@ -41,3 +41,9 @@ void	ft_data_texture(t_raycast *rayc)
 	rayc->tex_pix_addr[4] = (int*)mlx_get_data_addr(rayc->tex_ptr[4],
 	&rayc->tex_bpp[4], &rayc->tex_sl[4], &rayc->tex_endian[4]);
 }
+
+int		ft_put_img(t_raycast *rayc)
+{
+	mlx_put_image_to_window(rayc->mlx_ptr, rayc->mlx_win, rayc->rayc_ptr, 0, 0);
+	return (0);
+}

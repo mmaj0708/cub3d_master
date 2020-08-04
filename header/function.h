@@ -129,4 +129,5 @@ void			ft_pass_digit(char **map_str);
 int				ft_check_nb_text(t_raycast *param, char *texture);
 int				ft_strcmp(char *s1, char *s2);
 void			ft_put_char(char c);
+int				ft_put_img(t_raycast *rayc);
 #endif
