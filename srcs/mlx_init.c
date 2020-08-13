@@ -6,7 +6,7 @@
 /*   By: mmaj <mmaj@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 19:06:49 by mmaj              #+#    #+#             */
-/*   Updated: 2020/08/02 22:49:42 by mmaj             ###   ########.fr       */
+/*   Updated: 2020/08/13 16:07:57 by mmaj             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int		ft_init_mlx(t_raycast *rayc)
 		rayc->resol_x = rayc->screenw;
 	if (rayc->resol_y > rayc->screenh)
 		rayc->resol_y = rayc->screenh;
+	if (rayc->resol_y % 2 != 0 && rayc->resol_y > 1)
+		rayc->resol_y = rayc->resol_y - 1;
 	rayc->mlx_win = mlx_new_window(rayc->mlx_ptr, rayc->resol_x,
 	rayc->resol_y, "Wolf3D");
 	ft_data_texture(rayc);
